@@ -1,1 +1,1 @@
-# MidPay
+# SecurePay
