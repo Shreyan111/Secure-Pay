@@ -1,7 +1,3 @@
-/**
- * @author yashkasera
- * Created 08/10/21 at 8:47 PM
- */
 import React from 'react';
 import {
     Button,
@@ -22,7 +18,6 @@ import {
 } from "@mui/material";
 import {useHistory} from "react-router-dom";
 import useAxios from "../../../hooks/useAxios";
-import {DropzoneDialog} from "material-ui-dropzone";
 import {getDownloadURL, getStorage, ref, uploadBytesResumable} from "firebase/storage";
 import API from '../../../util/api'
 import Paths from '../../../util/paths'
@@ -108,8 +103,8 @@ const NewIssue = () => {
             setSnackbarMessage('Short Description Cannot be empty!')
         else if (values.description.length < 50)
             setSnackbarMessage('Long Description should be at least 50 characters')
-        else if (values.image.length === 0)
-            setSnackbarMessage('Please add atleast 1 image')
+        // else if (values.image.length === 0)
+        //     setSnackbarMessage('Please add atleast 1 image')
         else {
             try {
                 const res = await API.post('/customer/issue', {
@@ -328,14 +323,14 @@ const NewIssue = () => {
                 message={snackbarMessage}
                 autoHideDuration={5000}/>
 
-            <DropzoneDialog
+            {/* <DropzoneDialog
                 open={imageDialog}
                 acceptedFiles={['image/jpeg', 'image/png', 'image/bmp']}
                 showPreviews={true}
                 onSave={handleFileSave}
                 onClose={() => showImageDialog(false)}
                 maxFileSize={5000000}
-            />
+            /> */}
             <Dialog open={uploadTask} maxWidth='sm' fullWidth>
                 <DialogTitle>
                     Uploading image {progressValues.currentFile} of {progressValues.totalFiles}

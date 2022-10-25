@@ -4,7 +4,7 @@ const paths = {
     payments: '/payments',
     newPaymentById: '/payments/new/:id',
     newPayment: '/payments/new',
-    orders: '/orders',
+    order: '/order',
     reviews: '/reviews',
     issues: '/issues',
     newIssue: '/issues/new',

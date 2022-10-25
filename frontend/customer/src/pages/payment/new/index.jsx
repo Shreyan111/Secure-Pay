@@ -159,7 +159,10 @@ const NewIssue = () => {
             console.log(orderId)
             const res = await API.get('/payment/try/' + orderId);
             const order = res.data
+            console.log(order);
             const review = await API.get('/seller/' + order.seller._id + '/reviews');
+            const reviews = review.data
+            console.log(reviews);
             setValues({
                 ...values,
                 orderId: order.orderId,

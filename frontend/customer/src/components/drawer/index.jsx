@@ -3,12 +3,12 @@ import Drawer from '@mui/material/Drawer';
 import makeStyles from '@mui/styles/makeStyles';
 import withStyles from '@mui/styles/withStyles';
 import Hidden from '@mui/material/Hidden';
-import {useHistory, useLocation} from 'react-router-dom';
-import {Button, Stack} from '@mui/material';
+import { useHistory, useLocation } from 'react-router-dom';
+import { Button, Stack } from '@mui/material';
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import Paths from "../../util/paths";
-import {getAuth} from "firebase/auth";
+import { getAuth, signOut } from "firebase/auth";
 
 const drawerWidth = 240;
 
@@ -75,24 +75,33 @@ const Button3 = withStyles((theme) => ({
 
 export default function NavigationDrawer(props) {
     const classes = useStyles();
-    const {pathname} = useLocation();
+    const { pathname } = useLocation();
     let history = useHistory();
+    const auth = getAuth();
     const logoutHandler = () => {
-        console.log('logging out')
-        getAuth().signOut()
+        console.log('logging out');
+        sessionStorage.clear()
+        // getAuth().signOut();
+        signOut(auth).then(() => {
+            // Sign-out successful.
+            console.log("Signed Out");
+        }).catch((error) => {
+            // An error happened.
+            console.log(error);
+        });
     };
     const drawer = (
         <Stack
             direction={'column'}
             justifyContent={'space-between'}
-            sx={{height: '100%', paddingTop: 2, paddingBottom: 2}}>
+            sx={{ height: '100%', paddingTop: 2, paddingBottom: 2 }}>
             <Stack
                 direction="column"
                 spacing={3}>
                 <Stack
                     direction="column">
                     <Typography variant="h6" noWrap
-                                sx={{width: '100%'}}>
+                        sx={{ width: '100%' }}>
                         {props.response && props.response.name}</Typography>
                     <Typography variant="body2" noWrap>
                         {props.response && props.response.email}</Typography>
@@ -102,30 +111,30 @@ export default function NavigationDrawer(props) {
                     alignItems="center"
                     justifyContent="space-evenly"
                     textAlign="center"
-                    divider={<Divider orientation="vertical" flexItem/>}>
+                    divider={<Divider orientation="vertical" flexItem />}>
                     <Stack direction="column" className={classes.options} onClick={() => history.push(Paths.orders)}>
                         <Typography variant="subtitle1">Orders</Typography>
                         <Typography variant="h6"
-                                    color="primary">{props.response && props.response.orderCount}</Typography>
+                            color="primary">{props.response && props.response.orderCount}</Typography>
                     </Stack>
                     <Stack direction="column" className={classes.options} onClick={() => history.push(Paths.issues)}>
                         <Typography variant="subtitle1">Issues</Typography>
                         <Typography variant="h6"
-                                    className={classes.issueCount}>{props.response && props.response.issueCount}</Typography>
+                            className={classes.issueCount}>{props.response && props.response.issueCount}</Typography>
                     </Stack>
                 </Stack>
                 <Stack
                     direction="column"
                     spacing={1.5}>
-                    <Divider orientation="horizontal" flexItem/>
+                    <Divider orientation="horizontal" flexItem />
                     <Button1 variant="contained" color="primary" fullWidth
-                             onClick={() => history.push(Paths.newPayment)}>
+                        onClick={() => history.push(Paths.newPayment)}>
                         New Payment
                     </Button1>
                     <Button2 variant="contained" fullWidth onClick={() => history.push(Paths.newIssue)}>
                         Raise an issue
                     </Button2>
-                    <Divider orientation="horizontal" flexItem/>
+                    <Divider orientation="horizontal" flexItem />
                 </Stack>
             </Stack>
 
@@ -134,12 +143,12 @@ export default function NavigationDrawer(props) {
                 alignItems="center"
                 justifyContent="flex-end"
                 spacing={1.5}>
-                <Button3 variant="outlined" color="secondary" fullWidth onClick={() => history.push(Paths.chat)}>
+                {/* <Button3 variant="outlined" color="secondary" fullWidth onClick={() => history.push(Paths.chat)}>
                     Chat
                 </Button3>
                 <Button3 variant="outlined" color="secondary" fullWidth>
                     Help
-                </Button3>
+                </Button3> */}
                 <Button3 variant="outlined" color="secondary" fullWidth onClick={() => history.push(Paths.settings)}>
                     Settings
                 </Button3>

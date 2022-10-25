@@ -1,11 +1,7 @@
-/**
- * @author yashkasera
- * Created 16/10/21 at 2:29 PM
- */
-
 import React from 'react';
 import {Button, Paper, Stack, Typography} from "@mui/material";
 import makeStyles from "@mui/styles/makeStyles";
+import useAxios from "../../hooks/useAxios";
 
 const useStyles = makeStyles((theme) => ({
     paymentCard: {
@@ -47,6 +43,8 @@ const useStyles = makeStyles((theme) => ({
 const RecentOrderCard = (props) => {
     // const {order} = props;
     const classes = useStyles();
+    const {response, error, loading} = useAxios('/customer/order?limit=1');
+    console.log(response);
     return (
         <Paper className={classes.paymentCard} elevation={5}>
             <Stack
@@ -71,21 +69,21 @@ const RecentOrderCard = (props) => {
                     <div>
                         <Typography variant={'h6'} color={'primary'} textAlign={'start'}>
                             {/*Order Id : {order.orderId}*/}
-                            Order Id : uiy18379
+                            Order Id : {response && response[0].orderId}
                         </Typography>
                         <Typography variant={'subtitle2'} color={'text.disabled'}>
                             {/*Rs. {order.amount}*/}
-                            {new Date().toLocaleString()}
+                            {/* {new Date().toLocaleString()} */}
+                            {response && response[0].createdAt}
                         </Typography>
                     </div>
                     <Typography variant={'h6'}>
                         {/*Rs. {order.amount}*/}
-                        Rs. 13432
+                        Rs. {response && response[0].amount}
                     </Typography>
                     <Typography variant={'body1'} color={'textSecondary'}>
                         {/*{order.description}*/}
-                        Lorem ipsum dolor sit amet
-                        Lorem ipsum dolor sit amet
+                        Store Name: {response && response[0].seller.storeName}
                     </Typography>
                     <div>
                         <Typography variant={'body1'} color={'text.primary'} textAlign={'start'}>
@@ -93,10 +91,10 @@ const RecentOrderCard = (props) => {
                             Sold By :
                         </Typography>
                         <Typography variant={'subtitle2'} color={'text.secondary'}>
-                            Yash Kasera
+                        {response && response[0].seller.name}
                         </Typography>
                         <Typography variant={'subtitle2'} color={'text.disabled'}>
-                            @yash.kasera
+                        @{response && response[0].seller.username}
                         </Typography>
                     </div>
                     <div style={{width: '100%'}}>
@@ -104,7 +102,6 @@ const RecentOrderCard = (props) => {
                             variant={"contained"}
                             color={'error'}
                             size={'small'}
-                            sx={{width: 'calc(40% - 8px)', mr: '8px'}}
                             // onClick={() => {
                             //     props.setOrderId(order.orderId)
                             //     props.setValues({
@@ -118,7 +115,7 @@ const RecentOrderCard = (props) => {
                         >
                             Raise an Issue
                         </Button>
-                        <Button
+                        {/* <Button
                             variant={"contained"}
                             color={'success'}
                             sx={{width: '60%'}}
@@ -135,7 +132,7 @@ const RecentOrderCard = (props) => {
                             // }}
                         >
                             Mark as complete
-                        </Button>
+                        </Button> */}
                     </div>
                 </Stack>
                 <div className={classes.cardFooter}/>

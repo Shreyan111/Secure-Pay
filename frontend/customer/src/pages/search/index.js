@@ -51,7 +51,6 @@ const SearchComponent = ({openSearch, setOpenSearch}) => {
 
     React.useEffect(() => {
         const delayDebounceFn = setTimeout(() => {
-            console.log(search)
             fetchSellers();
             // Send Axios request here
         }, 3000)

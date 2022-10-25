@@ -8,7 +8,7 @@ const Reviews = lazy(() => import('../pages/reviews'));
 const Payments = lazy(() => import('../pages/payments'));
 const Orders = lazy(() => import('../pages/orders'));
 const Settings = lazy(() => import('../pages/settings'));
-const Logs = lazy(() => import('../pages/logs'));
+// const Logs = lazy(() => import('../pages/logs'));
 const Issues = lazy(() => import('../pages/issues'));
 const ViewIssue = lazy(() => import('../pages/issues/view-issue'));
 const Profile = lazy(() => import('../pages/profile'));
@@ -29,7 +29,7 @@ export default function PrivateRoutes() {
 
                 <Route path={Paths.settings} component={Settings}/>
                 <Route path={Paths.profile} component={Profile}/>
-                <Route path={Paths.logs} component={Logs}/>
+                {/* <Route path={Paths.logs} component={Logs}/> */}
                 <Redirect to={Paths.dashboard}/>
             </Switch>
         </Suspense>

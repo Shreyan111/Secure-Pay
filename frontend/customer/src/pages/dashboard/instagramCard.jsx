@@ -39,7 +39,7 @@ export default function RatingCard(props) {
                 <Stack direction="row" alignItems="center" columnGap={2} justifyContent={'space-between'}>
                     <Box sx={{minWidth: 200}}>
                         <Typography variant="subtitle2" noWrap>
-                            Yash Kasera
+                            Shreyan Sanyal
                         </Typography>
                         <Typography variant="body2" sx={{color: 'text.secondary'}} noWrap>
                             Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet

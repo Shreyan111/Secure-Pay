@@ -11,6 +11,7 @@ export default function Issues() {
         url: 'seller/issue',
         method: 'GET',
     })
+    console.log(response);
     return (
         <>
             {loading && <LoadingComponent/>}

@@ -39,12 +39,12 @@ const Columns = [
         minWidth: 200,
     },
     {
-        field: 'status',
+        field: 'status',    
         headerName: 'Status',
         minWidth: 150,
         renderCell: ({value}) =>
             <Chip
-                label={value === 'PAID' ? 'PENDING' : 'RECEIVED'}
+                label={value === 'PAID' ? 'RECEIVED' : 'PENDING'}
                 variant={'outlined'}
                 color={
                     value === 'PAID' ? 'info' :

@@ -118,11 +118,11 @@ export default function Payments(config) {
                 spacing={2}>
                 <StyledPaper elevation={3}>
                     <Typography variant={'h4'}>{currencyFormatter.format(values.paidTotal)}</Typography>
-                    <Typography variant={'h6'} color='textSecondary'>Pending</Typography>
+                    <Typography variant={'h6'} color='textSecondary'>Received</Typography>
                 </StyledPaper>
                 <StyledPaper elevation={3}>
                     <Typography variant={'h4'}>{currencyFormatter.format(values.completedTotal)}</Typography>
-                    <Typography variant={'h6'} color='textSecondary'>Received</Typography>
+                    <Typography variant={'h6'} color='textSecondary'>Pending</Typography>
                 </StyledPaper>
                 <StyledPaper elevation={3}>
                     <Typography variant={'h4'}>{currencyFormatter.format(values.grandTotal)}</Typography>

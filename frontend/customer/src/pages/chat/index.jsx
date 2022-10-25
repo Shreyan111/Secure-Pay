@@ -85,7 +85,7 @@ const Chat = () => {
                                        justifyContent={'space-between'}>
                                     <div>
                                         <Typography variant={'h6'} noWrap>
-                                            Yash Kasera <VerifiedRounded fontSize={'small'} color={'primary'}/>
+                                            Shreyan Sanyal <VerifiedRounded fontSize={'small'} color={'primary'}/>
                                         </Typography>
                                         <Typography
                                             variant={'subtitle2'}

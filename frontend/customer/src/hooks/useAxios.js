@@ -1,7 +1,3 @@
-/**
- * @author yashkasera
- * Created 04/10/21 at 6:59 PM
- */
 import {useEffect, useState} from 'react';
 import API from '../util/api';
 

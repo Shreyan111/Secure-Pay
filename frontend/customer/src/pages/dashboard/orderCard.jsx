@@ -1,42 +1,21 @@
 import React from 'react'
 import {Box, Button, ButtonGroup, Card, CardHeader, Chip, Divider, IconButton, Stack, Typography} from "@mui/material";
 import {BugReportRounded, DoneAllRounded, Forward} from "@mui/icons-material";
-import Chart from 'react-apexcharts';
+import useAxios from "../../hooks/useAxios";
+import LoadingComponent from "../../components/loading";
+import Orderdetails from './Orderdetails';
 
-const OrderItem = ({order}) => {
+const OrderItem = () => {
+    const {response, error, loading} = useAxios('/customer/order');
     return (
-        <Stack direction="row" alignItems="center" columnGap={2} justifyContent={'space-between'}>
-            <Box sx={{minWidth: 200}}>
-                <Typography variant="subtitle2" noWrap>
-                    Yash Kasera
-                </Typography>
-                <Typography variant="body2" sx={{color: 'text.secondary'}} noWrap>
-                    Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet
-                    Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet
-                </Typography>
-            </Box>
-            <Box>
-                <Typography variant="subtitle2" noWrap>
-                    Rs. 12349.00
-                </Typography>
-                <Typography variant="body2" sx={{color: 'text.secondary'}} noWrap>
-                    {new Date().toLocaleDateString()}
-                </Typography>
-            </Box>
-            {/*<CircularProgressWithLabel value={5} sx={{width: '100%'}}/>*/}
-            <div>
-                {/*<Chip label={'1 day left'} color={'error'}/>*/}
-                <Chip label={'7 days left'} color={'primary'} variant={'outlined'}/>
-            </div>
-            <ButtonGroup>
-                <IconButton>
-                    <BugReportRounded color={'error'}/>
-                </IconButton>
-                <IconButton>
-                    <DoneAllRounded color={'success'}/>
-                </IconButton>
-            </ButtonGroup>
-        </Stack>
+        <>
+        {loading && <LoadingComponent/>}
+        {response?.map((order, index) => (
+                    <Stack direction="row" alignItems="center" columnGap={2} justifyContent={'space-between'} key={index}>
+                        <Orderdetails order={order}/>
+                    </Stack>
+                ))}
+        </>
     )
 }
 
@@ -48,7 +27,7 @@ export default function OrderCard(props) {
                     <CardHeader title="My Orders"/>
                     <div style={{overflow: 'scroll'}}>
                         <Stack spacing={2} sx={{px: 2}}>
-                            {[1, 2, 3, 4, 5, 6, 7].map((issue) => (
+                            {[1].map((issue) => (
                                 <OrderItem key={issue}/>
                             ))}
                         </Stack>

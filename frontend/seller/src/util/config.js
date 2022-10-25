@@ -1,9 +1,8 @@
 module.exports = {
-    apiKey: "AIzaSyCW5EL0rDWYb7dWtq3-RDoNViHh38OTKaI",
-    authDomain: "mid-pay.firebaseapp.com",
-    projectId: "mid-pay",
-    storageBucket: "mid-pay.appspot.com",
-    messagingSenderId: "376377820205",
-    appId: "1:376377820205:web:9c6c01e84245c273ac64a4",
-    measurementId: "G-QY5K6RHF86"
-};
+    apiKey: "AIzaSyAEyjq8tkPBSxYAurUvwENoEEE6xForVqQ",
+    authDomain: "pay-bc292.firebaseapp.com",
+    projectId: "pay-bc292",
+    storageBucket: "pay-bc292.appspot.com",
+    messagingSenderId: "216756329887",
+    appId: "1:216756329887:web:72b30c46e14dd6721231aa"
+  };

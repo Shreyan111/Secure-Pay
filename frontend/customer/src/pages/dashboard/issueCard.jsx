@@ -27,7 +27,7 @@ import {
 
 const Issue = () => {
     return {
-        title: 'Yash Kasera',
+        title: 'Shreyan Sanyal',
         description: 'Lorem Ipsum dolor Sit Amet',
         image: img,
         postedAt: new Date().toDateString()
@@ -54,7 +54,7 @@ export default function IssueCard(props) {
                     />
                     <Box sx={{minWidth: 240,width:'100%'}}>
                         <Typography variant="subtitle2" noWrap>
-                            Yash Kasera
+                            Shreyan Sanyal
                         </Typography>
                         <Typography variant="body2" sx={{color: 'text.secondary'}} noWrap>
                             Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet
