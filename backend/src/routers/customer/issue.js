@@ -1,7 +1,3 @@
-/**
- * @author yashkasera
- * Created 03/10/21 at 11:56 PM
- */
 const express = require('express');
 const auth = require("../../middlewares/customerAuth");
 const {NotFoundError, BadRequestError} = require("../../util/errorHandler");
@@ -46,14 +42,13 @@ router.get('/customer/issue/recentOrders', auth, async (req, res) => {
         const orders = await Promise.all(
             temp.map(async (order) => {
                 const issue = await Issue.findOne({order: order.orderId})
-                if (!issue)
-                    return order;
+                if (!issue) return order;
                 return null
             })
         )
         const result = orders.filter((order) => order !== null)
         if (result && result.length > 0) return res.send(result)
-        return res.status(400).send(new BadRequestError())
+        else return res.status(400).send(new BadRequestError())
     } catch (e) {
         return res.status(400).send(new BadRequestError(e.message))
     }

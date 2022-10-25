@@ -11,8 +11,7 @@ const schema = new mongoose.Schema({
         unique: true
     },
     username: {
-        type: String,
-        required: true
+        type: String
     },
     name: {
         type: String,
@@ -48,12 +47,10 @@ const schema = new mongoose.Schema({
         type: String,
     },
     storeName: {
-        type: String,
-        required: true
+        type: String
     },
     storeDescription: {
-        type: String,
-        required: true
+        type: String
     },
     category: {
         type: String,
@@ -76,23 +73,19 @@ const schema = new mongoose.Schema({
     },
     address: {
         address1: {
-            type: String,
-            required: true
+            type: String
         },
         address2: {
             type: String
         },
         city: {
-            type: String,
-            required: true
+            type: String
         },
         state: {
-            type: String,
-            required: true
+            type: String
         },
         pincode: {
-            type: Number,
-            required: true
+            type: Number
         }
     },
     image: String,

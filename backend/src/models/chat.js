@@ -1,8 +1,3 @@
-/**
- * @author yashkasera
- * Created 17/10/21 at 9:23 PM
- */
-
 const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema({

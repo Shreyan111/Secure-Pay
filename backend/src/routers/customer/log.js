@@ -1,8 +1,3 @@
-/**
- * @author yashkasera
- * Created 06/10/21 at 3:14 AM
- */
-
 const express = require('express');
 const auth = require("../../middlewares/customerAuth");
 const Log = require("../../models/customerLog");

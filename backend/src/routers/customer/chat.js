@@ -1,8 +1,3 @@
-/**
- * @author yashkasera
- * Created 18/10/21 at 12:44 PM
- */
-
 const express = require('express');
 const auth = require("../../middlewares/customerAuth");
 const Chat = require("../../models/chat");

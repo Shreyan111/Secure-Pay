@@ -1,8 +1,3 @@
-/**
- * @author yashkasera
- * Created 08/10/21 at 9:33 PM
- */
-
 const express = require('express');
 const auth = require("../../middlewares/customerAuth");
 const {NotFoundError, StoreNotVerifiedError, BadRequestError} = require("../../util/errorHandler");

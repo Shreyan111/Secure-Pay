@@ -1,8 +1,3 @@
-/**
- * @author yashkasera
- * Created 17/10/21 at 9:26 PM
- */
-
 const mongoose = require('mongoose');
 const Chat = require("./chat");
 const {ObjectId} = require("mongodb");

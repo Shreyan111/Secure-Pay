@@ -1,7 +1,3 @@
-/**
- * @author yashkasera
- * Created 29/09/21 at 06:34 PM
- */
 const mongoose = require('mongoose');
 const customer = require('../models/customer');
 const seller = require('../models/seller');

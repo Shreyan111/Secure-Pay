@@ -1,7 +1,3 @@
-/**
- * @author yashkasera
- * Created 10/10/21 at 12:14 AM
- */
 const express = require('express');
 const auth = require("../../middlewares/customerAuth");
 const {BadRequestError} = require("../../util/errorHandler");
@@ -11,6 +7,7 @@ const router = new express.Router();
 
 router.get('/customer/dashboard', auth, async (req, res) => {
     try {
+        console.log(req.headers.authorization)
         const issueCount = await Issue.find({customer: req.customer._id}).countDocuments();
         const orderCount = await Order.find({customer: req.customer._id}).countDocuments();
         return res.send({

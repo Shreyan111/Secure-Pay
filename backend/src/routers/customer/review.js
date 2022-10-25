@@ -1,7 +1,3 @@
-/**
- * @author yashkasera
- * Created 03/10/21 at 11:49 PM
- */
 const express = require('express');
 const router = new express.Router();
 const Seller = require('../../models/seller');

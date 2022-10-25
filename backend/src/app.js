@@ -1,7 +1,3 @@
-/**
- * @author yashkasera
- * Created 29/09/21 at 06:21 PM
- */
 require('dotenv').config()
 require('./db/mongoose');
 require('./util/razorpay')
@@ -39,8 +35,8 @@ firebaseAdmin.initializeApp({
         clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
         privateKey: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n')
     })
-});
-
+})
+// console.log("hek-"+firebaseAdmin)
 app.use(cors());
 
 app.use(publicSellerRouter);
