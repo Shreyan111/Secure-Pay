@@ -24,14 +24,24 @@ import {
     MoreVertRounded,
     OpenInNewRounded
 } from "@mui/icons-material";
+import useAxios from "../../hooks/useAxios";
+import Issuedetails from './Issuedetails';
+import LoadingComponent from "../../components/loading";    
 
-const Issue = () => {
-    return {
-        title: 'Shreyan Sanyal',
-        description: 'Lorem Ipsum dolor Sit Amet',
-        image: img,
-        postedAt: new Date().toDateString()
-    };
+const IssueItem = () => {
+    const {response, error, loading} = useAxios('/customer/issue');
+    console.log(response);
+
+    return (
+        <>
+        {loading && <LoadingComponent/>}
+        {response?.map((issue, index) => (
+                    <Stack direction="row" alignItems="center" columnGap={2} justifyContent={'space-between'} key={index}>
+                        <Issuedetails issue={issue}/>
+                    </Stack>
+                ))}
+        </>
+    )
 }
 
 
@@ -41,73 +51,15 @@ export default function IssueCard(props) {
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
-
-    function IssueItem({issue}) {
-        return (
-            <>
-                <Stack direction="row" alignItems="center" justifyContent={'space-between'} spacing={2} width={'100%'}>
-                    <Box
-                        component="img"
-                        alt={'title'}
-                        src={img}
-                        sx={{width: 48, height: 48, borderRadius: 1.5}}
-                    />
-                    <Box sx={{minWidth: 240,width:'100%'}}>
-                        <Typography variant="subtitle2" noWrap>
-                            Shreyan Sanyal
-                        </Typography>
-                        <Typography variant="body2" sx={{color: 'text.secondary'}} noWrap>
-                            Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet
-                        </Typography>
-                    </Box>
-                    <Box>
-                        <Chip
-                            label={'Pending'}
-                            variant={'outlined'}
-                            color={'error'
-                                // params.value === 'CREATED' ? 'primary' :
-                                //     params.value === 'PAID' ? 'info' :
-                                //         params.value === 'DELIVERED' ? 'secondary' :
-                                //             params.value === 'COMPLETED' ? 'success' :
-                                //                 params.value === 'REFUNDED' ? 'default' :
-                                //                     params.value === 'CANCELLED' ? 'error' :
-                                //                         'error'
-                            }
-                            icon={
-                                // params.value === 'CREATED' ? <EditRounded/> :
-                                //     params.value === 'PAID' ? <CheckCircleOutlined/> :
-                                //         params.value === 'DELIVERED' ? <DeliveryDining/> :
-                                //             params.value === 'COMPLETED' ? <DoneAll/> :
-                                //                 params.value === 'REFUNDED' ? <MonetizationOnOutlined/> :
-                                //                     params.value === 'CANCELED' ? <CancelOutlined/> :
-                                <ErrorOutlined/>
-                            }
-                        />
-                    </Box>
-                    <ButtonGroup variant={'contained'}>
-                        <IconButton>
-                            <OpenInNewRounded color={'warning'}/>
-                        </IconButton>
-                        <IconButton>
-                            <ChatBubbleOutlineRounded color={'info'}/>
-                        </IconButton>
-                        <IconButton>
-                            <DoneAllRounded color={'success'}/>
-                        </IconButton>
-                    </ButtonGroup>
-                </Stack>
-            </>
-        );
-    }
     return (
         <>
             <Card sx={{height: '100%', p: 0}} elevation={5}>
                 <Stack justifyContent={'space-between'} height={'100%'}>
                     <Stack>
-                        <CardHeader title="Issues Raised"/>
+                        <CardHeader title="My Issues"/>
                         <div style={{overflow: 'scroll'}}>
                             <Stack spacing={2} sx={{px: 2}}>
-                                {[1, 2, 3, 4].map((issue) => (
+                                {[1].map((issue) => (
                                     <IssueItem key={issue}/>
                                 ))}
                             </Stack>

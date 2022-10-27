@@ -44,7 +44,7 @@ const RecentOrderCard = (props) => {
     // const {order} = props;
     const classes = useStyles();
     const {response, error, loading} = useAxios('/customer/order?limit=1');
-    console.log(response);
+    // console.log(response);
     return (
         <Paper className={classes.paymentCard} elevation={5}>
             <Stack

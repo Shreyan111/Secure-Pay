@@ -10,7 +10,7 @@ const router = new express.Router();
 
 router.get('/customer/issue', auth, async (req, res) => {
     try {
-        const issues = await Issue.find({customer: req.customer._id})
+        const issues = await Issue.find({customer: req.customer._id}).populate('seller', 'name storeName')
         if (issues)
             return res.send(issues);
         return res.status(404).send(new NotFoundError());
