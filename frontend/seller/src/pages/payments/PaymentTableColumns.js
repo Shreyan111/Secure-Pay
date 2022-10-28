@@ -1,7 +1,3 @@
-/**
- * @author yashkasera
- * Created 11/10/21 at 10:36 PM
- */
 import {Chip} from "@mui/material";
 import {
     CheckCircleOutlined,
@@ -30,7 +26,7 @@ const Columns = [
         field: 'customer',
         headerName: 'Customer Name',
         description: 'Customer Name',
-        valueFormatter: ({value}) => value.name,
+        valueFormatter: ({value}) => value?.name,
         minWidth: 200,
     }, {
         field: 'description',
@@ -44,16 +40,16 @@ const Columns = [
         minWidth: 150,
         renderCell: ({value}) =>
             <Chip
-                label={value === 'PAID' ? 'RECEIVED' : 'PENDING'}
+                label={value === 'PAID' || value === 'SHIPPED' || value === 'DELIVERED' ? 'PAID' : 'PENDING'}
                 variant={'outlined'}
                 color={
-                    value === 'PAID' ? 'info' :
-                        value === 'COMPLETED' ? 'success' :
+                    value === 'PAID' || value === 'SHIPPED' || value === 'DELIVERED' ? 'info' :
+                        value === 'PENDING' ? 'success' :
                             'error'
                 }
                 icon={
-                    value === 'COMPLETED' ? <CheckCircleOutlined/> :
-                        value === 'PAID' ? <PendingActionsOutlined/> :
+                    value === 'PENDING' ? <CheckCircleOutlined/> :
+                    value === 'PAID' || value === 'SHIPPED' || value === 'DELIVERED' ? <PendingActionsOutlined/> :
                             <ErrorOutlined/>
                 }
             />

@@ -83,32 +83,32 @@ export default function NavigationDrawer(props) {
             route: Paths.payments,
             icon: <PaymentsRounded/>
         },
-        Chat: {
-            route: Paths.chat,
-            icon: <ChatBubbleRounded/>
-        },
-        Reviews: {
-            route: Paths.reviews,
-            icon: <ReviewsRounded/>
-        },
+        // Chat: {
+        //     route: Paths.chat,
+        //     icon: <ChatBubbleRounded/>
+        // },
+        // Reviews: {
+        //     route: Paths.reviews,
+        //     icon: <ReviewsRounded/>
+        // },
         Issues: {
             route: Paths.issues,
             icon: <BugReportRounded/>
         },
-        Logs: {
-            route: Paths.logs,
-            icon: <DonutSmallRounded/>
-        },
+        // Logs: {
+        //     route: Paths.logs,
+        //     icon: <DonutSmallRounded/>
+        // },
     };
     const routes2 = {
         Profile: {
             route: Paths.profile,
             icon: <AccountBoxRounded/>
         },
-        Settings: {
-            route: Paths.settings,
-            icon: <SettingsRounded/>
-        },
+        // Settings: {
+        //     route: Paths.settings,
+        //     icon: <SettingsRounded/>
+        // },
     };
 
     const handleLogout = () => {

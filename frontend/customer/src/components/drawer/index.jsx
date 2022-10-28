@@ -150,7 +150,7 @@ export default function NavigationDrawer(props) {
                     Help
                 </Button3> */}
                 <Button3 variant="outlined" color="secondary" fullWidth onClick={() => history.push(Paths.settings)}>
-                    Settings
+                    My Orders
                 </Button3>
                 <Button1 color="primary" fullWidth onClick={logoutHandler}>
                     Logout

@@ -54,6 +54,7 @@ export default function Payments(config) {
                 rows: res.data.payments,
                 paidTotal: res.data.paidTotal,
                 completedTotal: res.data.completedTotal,
+                createdTotal: res.data.createdTotal,
                 grandTotal: res.data.paidTotal + res.data.completedTotal,
             })
             console.log(res)
@@ -121,12 +122,12 @@ export default function Payments(config) {
                     <Typography variant={'h6'} color='textSecondary'>Received</Typography>
                 </StyledPaper>
                 <StyledPaper elevation={3}>
-                    <Typography variant={'h4'}>{currencyFormatter.format(values.completedTotal)}</Typography>
+                    <Typography variant={'h4'}>{currencyFormatter.format(values.createdTotal)}</Typography>
                     <Typography variant={'h6'} color='textSecondary'>Pending</Typography>
                 </StyledPaper>
                 <StyledPaper elevation={3}>
                     <Typography variant={'h4'}>{currencyFormatter.format(values.grandTotal)}</Typography>
-                    <Typography variant={'h6'} color='textSecondary'>Total</Typography>
+                    <Typography variant={'h6'} color='textSecondary'>Total about to recieve</Typography>
 
 
                 </StyledPaper>
