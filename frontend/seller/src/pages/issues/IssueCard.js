@@ -1,8 +1,3 @@
-/**
- * @author yashkasera
- * Created 11/10/21 at 11:09 PM
- */
-
 import React from 'react'
 import {Button, Paper, Stack, Typography} from "@mui/material";
 import {OpenInNew} from "@mui/icons-material";
@@ -59,11 +54,14 @@ const IssueCard = ({issue}) => {
     const classes = useStyles();
     const [image, setImage] = React.useState(issue.image[0]);
     const history = useHistory();
+    console.log(issue);
     return (
         <>
             <Paper elevation={3}>
                 <div className={classes.container}>
-                    {issue.status === 'RAISED' && <div className={classes.newIssue}>New</div>}
+                    {issue?.status === 'RAISED' && <div className={classes.newIssue}>New</div>}
+                    {issue?.status === 'REFUNDED' && <div className={classes.newIssue}>Refunded</div>}
+                    {issue?.status === 'RESOLVED' && <div className={classes.newIssue}>Resolved</div>}
                     <img
                         src={image}
                         onError={() => setImage('https://firebasestorage.googleapis.com/v0/b/thrift-it-6292f.appspot.com/o/about%2FYash.jpeg?alt=media&token=51fd577a-e239-43d7-81dd-38709228ef5d')}
@@ -72,13 +70,13 @@ const IssueCard = ({issue}) => {
                         loading='lazy'/>
                 </div>
                 <Stack direction={'column'} spacing={0.5} sx={{padding: 2}}>
-                    <Typography variant='h6' noWrap>{issue.title}</Typography>
-                    <Typography variant='body2' color='text.secondary' noWrap>{issue.customer.name}</Typography>
+                    <Typography variant='h6' noWrap>{issue?.title}</Typography>
+                    <Typography variant='body2' color='text.secondary' noWrap>{issue?.customer.name}</Typography>
                     <Typography variant='body2' color='text.disabled' gutterBottom
-                                noWrap>{new Date(issue.updatedAt).toDateString()}</Typography>
+                                noWrap>Last seen: {new Date(issue?.updatedAt).toDateString()}</Typography>
                     <Stack direction={'row'} justifyContent={'space-between'} alignItems={'center'}>
                         <Typography color={'secondary'} size="small" variant={'body2'}>Issue
-                            #{issue.issueId}</Typography>
+                            #{issue?.issueId}</Typography>
                         <StyledButton
                             size={'small'}
                             onClick={() => history.push('/issues/' + issue.issueId)}

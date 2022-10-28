@@ -30,7 +30,6 @@ import LoadingComponent from "../../components/loading";
 
 const IssueItem = () => {
     const {response, error, loading} = useAxios('/customer/issue');
-    console.log(response);
 
     return (
         <>

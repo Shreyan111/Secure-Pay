@@ -20,7 +20,6 @@ import {
 } from "@mui/icons-material";
 
 const Issuedetails = ({issue}) => {
-    console.log(issue);
     return (
         <>
             <Stack direction="row" alignItems="center" justifyContent={'space-between'} spacing={2} width={'100%'}>
