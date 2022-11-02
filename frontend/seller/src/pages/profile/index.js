@@ -1,7 +1,3 @@
-/**
- * @author yashkasera
- * Created 14/10/21 at 9:53 PM
- */
 import React, {useEffect} from 'react';
 import makeStyles from "@mui/styles/makeStyles";
 import {Avatar, Button, Grid, Paper, Stack, TextField, Typography} from "@mui/material";

@@ -1,7 +1,3 @@
-/**
- * @author yashkasera
- * Created 17/10/21 at 11:47 PM
- */
 import React from 'react';
 import {styled} from "@mui/material/styles";
 import theme from "../../theme";

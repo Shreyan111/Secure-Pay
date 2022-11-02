@@ -1,7 +1,3 @@
-/**
- * @author yashkasera
- * Created 08/10/21 at 8:47 PM
- */
 import React from 'react';
 import {
     Avatar,
@@ -109,6 +105,10 @@ const NewIssue = () => {
         });
     }
 
+    const cancelOrder = () => {
+        history.push(Paths.dashboard);
+    }
+
     const displayRazorpay = async () => {
         const res = await loadScript(
             "https://checkout.razorpay.com/v1/checkout.js"
@@ -121,7 +121,7 @@ const NewIssue = () => {
             key: "rzp_test_Q829V4AkB1LaT1",
             amount: values.amount * 100,
             currency: "INR",
-            name: "MidPay - Modern Solution to Fair Trade",
+            name: "SecurePay - Modern Solution to Fair Trade",
             description: "Test Transaction",
             order_id: values.razorpay_order_id,
             handler: async function (response) {
@@ -309,7 +309,7 @@ const NewIssue = () => {
                             </Typography>
 
                             <Stack direction={'row'} spacing={2} sx={{width: '100%'}}>
-                                <Button variant={'outlined'} color={'error'} fullWidth>
+                                <Button variant={'outlined'} color={'error'} fullWidth onClick={cancelOrder}>
                                     Cancel Order
                                 </Button>
                                 <Button variant={"contained"} color={'primary'} fullWidth

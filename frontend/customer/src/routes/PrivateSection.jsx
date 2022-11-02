@@ -148,8 +148,8 @@ function PrivateSection(props) {
             open={isMenuOpen}
             onClose={handleMenuClose}
         >
-            <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-            <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+            {/* <MenuItem onClick={handleMenuClose}>Profile</MenuItem> */}
+            <MenuItem onClick={handleMenuClose}>My Account</MenuItem>
             <MenuItem onClick={handleLogout}>Logout</MenuItem>
         </Menu>
     );
@@ -222,7 +222,7 @@ function PrivateSection(props) {
                         noWrap
                         sx={{cursor: 'pointer'}}
                         onClick={() => history.push(Paths.dashboard)}>
-                        MidPay - Modern Solution to Fair Trade
+                        SecurePay - Modern Solution to Fair Trade
                     </Typography>
                     <div className={classes.grow}/>
                     <div className={classes.search}>

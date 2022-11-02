@@ -1,7 +1,3 @@
-/**
- * @author yashkasera
- * Created 03/10/21 at 06:58 PM
- */
 const express = require('express');
 const router = new express.Router();
 const Review = require('../../models/review');

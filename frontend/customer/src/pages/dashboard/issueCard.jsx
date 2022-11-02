@@ -70,13 +70,13 @@ export default function IssueCard(props) {
                         alignItems={'flex-end'}
                         sx={{p: 2}}>
                         <Divider sx={{width: '100%'}}/>
-                        <Button
+                        {/* <Button
                             to="#"
                             size="small"
                             variant={'contained'}
                             endIcon={<Forward/>}>
                             View all
-                        </Button>
+                        </Button> */}
                     </Stack>
                 </Stack>
             </Card>

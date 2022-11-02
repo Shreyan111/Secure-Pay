@@ -1,7 +1,3 @@
-/**
- * @author yashkasera
- * Created 13/10/21 at 11:59 PM
- */
 const express = require('express');
 const auth = require("../../middlewares/sellerAuth");
 const {BadRequestError, NotFoundError} = require("../../util/errorHandler");
@@ -87,7 +83,7 @@ router.get('/seller/dashboard/payments', auth, async (req, res) => {
                     $lt: lastDay
                 },
                 status: {
-                    $in: ['COMPLETED', 'PAID']
+                    $in: ['CREATED', 'PAID', 'SHIPPED', 'DELIVERED', 'ISSUE', 'CANCELLED', 'REFUNDED', 'COMPLETED']
                 },
             }
         }, {
@@ -95,11 +91,14 @@ router.get('/seller/dashboard/payments', auth, async (req, res) => {
                 _id: req.seller._id,
                 // count:{$sum: '$amount'}
                 'paid': {
-                    $sum: {$cond: {if: {$eq: ['$status', 'PAID']}, then: '$amount', else: 0}}
+                    $sum: {$cond: {if: {$or: [{$eq: ['$status', 'PAID']}, {$eq: ['$status', 'SHIPPED']}, {$eq: ['$status', 'DELIVERED']}]}, then: '$amount', else: 0}}
                 },
                 'completed': {
                     $sum: {$cond: {if: {$eq: ['$status', 'COMPLETED']}, then: '$amount', else: 0}}
                 },
+                'created': {
+                    $sum: {$cond: {if: {$eq: ['$status', 'CREATED']}, then: '$amount', else: 0}}
+                }
             }
         }])
         if (payments && payments.length > 0) {

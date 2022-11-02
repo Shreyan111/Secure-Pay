@@ -2,6 +2,8 @@ import React from 'react';
 import {Button, Paper, Stack, Typography} from "@mui/material";
 import makeStyles from "@mui/styles/makeStyles";
 import useAxios from "../../hooks/useAxios";
+import Paths from "../../util/paths";
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     paymentCard: {
@@ -42,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
 
 const RecentOrderCard = (props) => {
     // const {order} = props;
+    let history = useHistory();
     const classes = useStyles();
     const {response, error, loading} = useAxios('/customer/order?limit=1');
     // console.log(response);
@@ -69,21 +72,21 @@ const RecentOrderCard = (props) => {
                     <div>
                         <Typography variant={'h6'} color={'primary'} textAlign={'start'}>
                             {/*Order Id : {order.orderId}*/}
-                            Order Id : {response && response[0].orderId}
+                            Order Id : {response && response[0]?.orderId}
                         </Typography>
                         <Typography variant={'subtitle2'} color={'text.disabled'}>
                             {/*Rs. {order.amount}*/}
                             {/* {new Date().toLocaleString()} */}
-                            {response && response[0].createdAt}
+                            {response && response[0]?.createdAt}
                         </Typography>
                     </div>
                     <Typography variant={'h6'}>
                         {/*Rs. {order.amount}*/}
-                        Rs. {response && response[0].amount}
+                        Rs. {response && response[0]?.amount}
                     </Typography>
                     <Typography variant={'body1'} color={'textSecondary'}>
                         {/*{order.description}*/}
-                        Store Name: {response && response[0].seller.storeName}
+                        Store Name: {response && response[0]?.seller.storeName}
                     </Typography>
                     <div>
                         <Typography variant={'body1'} color={'text.primary'} textAlign={'start'}>
@@ -91,17 +94,17 @@ const RecentOrderCard = (props) => {
                             Sold By :
                         </Typography>
                         <Typography variant={'subtitle2'} color={'text.secondary'}>
-                        {response && response[0].seller.name}
+                        {response && response[0]?.seller.name}
                         </Typography>
                         <Typography variant={'subtitle2'} color={'text.disabled'}>
-                        @{response && response[0].seller.username}
+                        @{response && response[0]?.seller.username}
                         </Typography>
                     </div>
                     <div style={{width: '100%'}}>
                         <Button
                             variant={"contained"}
                             color={'error'}
-                            size={'small'}
+                            size={'small'} onClick={() => history.push(Paths.newIssue)}
                             // onClick={() => {
                             //     props.setOrderId(order.orderId)
                             //     props.setValues({

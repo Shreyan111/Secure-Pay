@@ -1,1 +1,1 @@
-# MidPay Customer Portal
+# SecurePay Customer Portal

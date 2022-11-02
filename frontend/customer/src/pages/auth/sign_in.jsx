@@ -30,6 +30,7 @@ export default function SignInSide({classes, setExistingHandler}) {
         try {
             const user = await signInWithEmailAndPassword(auth, values.email, values.password)
             console.log(user)
+            window.location.reload();
         } catch (e) {
             console.error(e)
         } finally {
@@ -39,7 +40,7 @@ export default function SignInSide({classes, setExistingHandler}) {
     return (
         <div className={classes.paper}>
             <Typography variant="h3">
-                MidPay
+                SecurePay
             </Typography>
             <Typography variant="h5" color="initial" style={{marginTop: "2rem"}}>
                 Customer Login
@@ -105,7 +106,7 @@ export default function SignInSide({classes, setExistingHandler}) {
                         </Link>
                     </Grid>
                     <Grid item>
-                        <Link onClick={setExistingHandler} variant="body2" color="primary">
+                        <Link onClick={setExistingHandler} variant="body2" color="primary" style={{cursor: "pointer"}}>
                             {"Don't have an account? Sign Up"}
                         </Link>
                     </Grid>

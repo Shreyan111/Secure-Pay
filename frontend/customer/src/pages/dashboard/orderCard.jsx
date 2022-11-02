@@ -4,6 +4,8 @@ import {BugReportRounded, DoneAllRounded, Forward} from "@mui/icons-material";
 import useAxios from "../../hooks/useAxios";
 import LoadingComponent from "../../components/loading";
 import Orderdetails from './Orderdetails';
+import { useHistory } from 'react-router-dom';
+import Paths from "../../util/paths";
 
 const OrderItem = () => {
     const {response, error, loading} = useAxios('/customer/order');
@@ -20,6 +22,7 @@ const OrderItem = () => {
 }
 
 export default function OrderCard(props) {
+    let history = useHistory();
     return (
         <Card sx={{height: '100%', p: 0}} elevation={5}>
             <Stack justifyContent={'space-between'} height={'100%'}>
@@ -43,7 +46,7 @@ export default function OrderCard(props) {
                         to="#"
                         size="small"
                         variant={'contained'}
-                        endIcon={<Forward/>}>
+                        endIcon={<Forward/>} onClick={() => history.push(Paths.settings)}>
                         View all
                     </Button>
                 </Stack>

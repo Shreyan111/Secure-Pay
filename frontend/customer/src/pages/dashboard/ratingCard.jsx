@@ -91,7 +91,7 @@ export default function RatingCard(props) {
             {/*    justifyContent={'space-between'}*/}
             {/*    width={'100%'}>*/}
             {/*    <Stack direction={'column'}>*/}
-            {/*        <Typography variant="body2" color="initial" noWrap>yash.kasera</Typography>*/}
+            {/*        <Typography variant="body2" color="initial" noWrap>shreyan.sanyal</Typography>*/}
             {/*        <Typography variant="subtitle2" color="textSecondary" component="div">*/}
             {/*            a1b2c3d4e5f6jbefnqjkjewqjkq kjjqnakjndfjkwndakjdfnafdjjanefjen mad jhasbd jahsd jhwbe dqhjwbdjqw*/}
             {/*            djqh dehjq fakckajevnkaewjqnrkjqn rn e*/}

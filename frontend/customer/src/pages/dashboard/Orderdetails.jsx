@@ -18,13 +18,13 @@
                 {order.amount}
             </Typography>
             <Typography variant="body2" sx={{color: 'text.secondary'}} noWrap>
-                {order.createdAt}
+                {new Date(order.createdAt).toDateString()}
             </Typography>
         </Box>
         {/*<CircularProgressWithLabel value={5} sx={{width: '100%'}}/>*/}
         <div>
             {/*<Chip label={'1 day left'} color={'error'}/>*/}
-            <Chip label={'7 days left'} color={'primary'} variant={'outlined'}/>
+            <Chip label={'5 days left'} color={'primary'} variant={'outlined'}/>
         </div>
     </Stack>
      );

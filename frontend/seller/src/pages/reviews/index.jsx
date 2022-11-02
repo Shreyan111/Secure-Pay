@@ -27,11 +27,11 @@ const Reviews = () => {
                             divider={<Divider orientation={'vertical'}/>}
                             textAlign={'center'}>
                             <Stack direction={'column'}>
-                                <Typography variant={'h3'} color={'secondary'}>238</Typography>
+                                <Typography variant={'h3'} color={'secondary'}>0</Typography>
                                 <Typography variant={'h6'}>Reviews</Typography>
                             </Stack>
                             <Stack direction={'column'}>
-                                <Typography variant={'h3'} color={'secondary'}>4.3</Typography>
+                                <Typography variant={'h3'} color={'secondary'}>0</Typography>
                                 <Typography variant={'h6'}>Rating</Typography>
                             </Stack>
                         </Stack>

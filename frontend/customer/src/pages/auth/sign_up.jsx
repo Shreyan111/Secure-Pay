@@ -52,6 +52,7 @@ export default function SignInSide({ classes, setExistingHandler }) {
             axios.post('http://localhost:3000/customer/new', article)
                 .then(response => console.log(response))
                 .catch(error => console.log(error));
+                window.location.reload();
         } catch (e) {
             console.error(e)
         } finally {
@@ -61,7 +62,7 @@ export default function SignInSide({ classes, setExistingHandler }) {
     return (
         <div className={classes.paper}>
             <Typography variant="h3">
-                MidPay
+                SecurePay
             </Typography>
             <Typography variant="h5" color="initial" style={{ marginTop: "2rem" }}>
                 Customer Sign Up
@@ -79,7 +80,7 @@ export default function SignInSide({ classes, setExistingHandler }) {
                             required
                             fullWidth
                             id="firstName"
-                            label="First Name"
+                            label="Full Name"
                             autoFocus
                         />
                     </Grid>
@@ -162,12 +163,12 @@ export default function SignInSide({ classes, setExistingHandler }) {
                             autoComplete="instagramUsername"
                         />
                     </Grid>
-                    <Grid item xs={12}>
+                    {/* <Grid item xs={12}>
                         <FormControlLabel
                             control={<Checkbox value="allowExtraEmails" color="primary" />}
                             label="I accept the terms and conditions"
                         />
-                    </Grid>
+                    </Grid> */}
                 </Grid>
                 <Button
                     type="submit"
@@ -181,7 +182,7 @@ export default function SignInSide({ classes, setExistingHandler }) {
                 </Button>
                 <Grid container justifyContent="flex-end" className={classes.extra}>
                     <Grid item>
-                        <Link onClick={setExistingHandler} color="primary" variant="body2">
+                        <Link onClick={setExistingHandler} color="primary" variant="body2" style={{cursor: "pointer"}}>
                             Already have an account? Sign in
                         </Link>
                     </Grid>

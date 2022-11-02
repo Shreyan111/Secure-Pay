@@ -1,8 +1,3 @@
-/**
- * @author yashkasera
- * Created 15/10/21 at 07:25 PM
- */
-
 import React from 'react'
 import {Button, Paper, Stack, Typography} from "@mui/material";
 import {OpenInNew} from "@mui/icons-material";

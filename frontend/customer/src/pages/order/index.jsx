@@ -1,7 +1,3 @@
-/**
- * @author yashkasera
- * Created 10/10/21 at 12:52 AM
- */
 import React from 'react';
 import {Chip, Container, Paper, Typography} from "@mui/material";
 import useAxios from "../../hooks/useAxios";

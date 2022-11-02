@@ -1,7 +1,3 @@
-/**
- * @author yashkasera
- * Created 17/10/21 at 9:43 PM
- */
 import React from 'react';
 import ChatDrawer from "./ChatDrawer";
 import {
@@ -90,7 +86,7 @@ const Chat = () => {
                                         <Typography
                                             variant={'subtitle2'}
                                             color={'text.secondary'} noWrap>
-                                            @yash.kasera
+                                            @shreyan.sanyal
                                         </Typography>
                                     </div>
 

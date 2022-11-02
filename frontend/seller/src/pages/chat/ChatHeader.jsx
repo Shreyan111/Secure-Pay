@@ -1,7 +1,3 @@
-/**
- * @author yashkasera
- * Created 18/10/21 at 1:49 PM
- */
 import React from 'react';
 import {Button, ButtonGroup, IconButton, Menu, MenuItem, Stack, Typography} from "@mui/material";
 import {AssignmentRounded, BugReportRounded, CallRounded, MoreVertRounded} from "@mui/icons-material";

@@ -1,8 +1,3 @@
-/**
- * @author yashkasera
- * Created 16/10/21 at 4:48 AM
- */
-
 import React from 'react';
 import {Button, Paper, Stack, Typography} from "@mui/material";
 import makeStyles from "@mui/styles/makeStyles";

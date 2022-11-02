@@ -27,6 +27,7 @@ export default function SignInSide({classes, setExistingHandler}) {
                 // Signed in 
                 const user = userCredential.user;
                 console.log(user)
+                window.location.reload();
                 // ...
             })
             .catch((error) => {
@@ -38,7 +39,7 @@ export default function SignInSide({classes, setExistingHandler}) {
     return (
         <div className={classes.paper}>
             <Typography variant="h3">
-                MidPay
+            SecurePay
             </Typography>
             <Typography variant="h5" color="text.primary" style={{marginTop: "2rem"}}>
                 Seller Portal
@@ -92,7 +93,7 @@ export default function SignInSide({classes, setExistingHandler}) {
                         </Link>
                     </Grid>
                     <Grid item>
-                        <Link onClick={setExistingHandler} variant="body2" color="secondary">
+                        <Link onClick={setExistingHandler} variant="body2" color="secondary" style={{cursor: "pointer"}}>
                             {"Don't have an account? Sign Up"}
                         </Link>
                     </Grid>

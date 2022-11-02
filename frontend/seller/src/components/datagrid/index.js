@@ -1,7 +1,3 @@
-/**
- * @author yashkasera
- * Created 14/10/21 at 4:56 PM
- */
 import {createTheme} from "@mui/material/styles";
 import makeStyles from "@mui/styles/makeStyles";
 import {ButtonGroup, createStyles, LinearProgress, Stack, Typography} from "@mui/material";

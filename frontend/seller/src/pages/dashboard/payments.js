@@ -1,7 +1,3 @@
-/**
- * @author yashkasera
- * Created 13/10/21 at 10:38 PM
- */
 import React from 'react';
 import Chart from 'react-apexcharts'
 import useAxios from "../../hooks/useAxios";
@@ -83,13 +79,15 @@ const Payments = (props) => {
                 }
             }
         },
-        labels: ['Received', 'Pending']
+        labels: ['Pending', 'Recieved']
     }
 
     const {response, error, loading} = useAxios({
         url: 'seller/dashboard/payments',
         method: 'GET'
     })
+
+    console.log(response);
 
     return (
         <>
@@ -98,7 +96,7 @@ const Payments = (props) => {
             <Chart
                 type={'donut'}
                 options={optionsArea}
-                series={Array(response.completed, response.paid)}
+                series={Array(response.created, response.paid)}
                 labels={['Received', 'Pending']}
             />}
         </>

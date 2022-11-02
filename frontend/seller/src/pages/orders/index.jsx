@@ -1,7 +1,3 @@
-/**
- * @author yashkasera
- * Created 04/10/21 at 5:59 PM
- */
 import React from 'react'
 import Button from '@mui/material/Button'
 import NewOrder from './newOrder';

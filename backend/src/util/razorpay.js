@@ -1,8 +1,3 @@
-/**
- * @author yashkasera
- * Created 04/10/21 at 12:29 PM
- */
-
 const Razorpay = require('razorpay');
 const crypto = require("crypto");
 

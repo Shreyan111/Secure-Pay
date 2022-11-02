@@ -1,1 +1,1 @@
-# MidPay Seller Portal
+# SecurePay Seller Portal

@@ -1,7 +1,3 @@
-/**
- * @author yashkasera
- * Created 16/10/21 at 8:36 PM
- */
 import React from 'react';
 import {
     Button,

@@ -1,7 +1,3 @@
-/**
- * @author yashkasera
- * Created 13/10/21 at 5:56 PM
- */
 import React from 'react';
 import Chart from "react-apexcharts";
 import useAxios from "../../hooks/useAxios";

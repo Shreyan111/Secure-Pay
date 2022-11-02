@@ -77,10 +77,11 @@ const IssueCard = ({issue}) => {
                     <Stack direction={'row'} justifyContent={'space-between'} alignItems={'center'}>
                         <Typography color={'secondary'} size="small" variant={'body2'}>Issue
                             #{issue?.issueId}</Typography>
+                        {issue?.status === 'RAISED' || issue?.status === 'VIEWED' ? 
                         <StyledButton
                             size={'small'}
                             onClick={() => history.push('/issues/' + issue.issueId)}
-                            startIcon={<OpenInNew/>}>View</StyledButton>
+                            startIcon={<OpenInNew/>}>View</StyledButton> : ''}
                     </Stack>
                 </Stack>
 

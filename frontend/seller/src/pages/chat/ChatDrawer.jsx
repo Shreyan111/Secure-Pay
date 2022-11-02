@@ -1,7 +1,3 @@
-/**
- * @author yashkasera
- * Created 17/10/21 at 9:52 PM
- */
 import React from 'react';
 import MuiDrawer from '@mui/material/Drawer';
 import {Avatar, Divider, IconButton, ListItem, ListItemAvatar, ListItemText} from "@mui/material";

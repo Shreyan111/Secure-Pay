@@ -56,19 +56,19 @@ export default function Dashboard() {
                                sx={{height: '100%', width: '100%'}}>
                             <StyledPaper>
                                 <Typography variant={'h4'}>{orderCount}</Typography>
-                                <Typography variant={'h6'} color={'textSecondary'}>Orders</Typography>
+                                <Typography variant={'h6'} color={'textSecondary'}>Orders with complete payments</Typography>
                             </StyledPaper>
                             <StyledPaper>
                                 <Typography variant={'h4'}>{issueCount}</Typography>
-                                <Typography variant={'h6'} color={'textSecondary'}>Issues</Typography>
+                                <Typography variant={'h6'} color={'textSecondary'}>Issues raised by the cutomer</Typography>
                             </StyledPaper>
-                            <StyledPaper>
+                            {/* <StyledPaper>
                                 <Typography
                                     variant={'h4'}>
                                     {(response && response.views) ? response.views : 0}
                                 </Typography>
                                 <Typography variant={'h6'} color={'textSecondary'}>Acquisition</Typography>
-                            </StyledPaper>
+                            </StyledPaper> */}
                         </Stack>
                         <StyledPaper>
                             <Stack justifyContent={'space-between'} direction={'row'}>
