@@ -55,7 +55,7 @@ export default function SignInSide() {
     return (
         <Grid container className={classes.root}>
             <CssBaseline />
-            <Grid item xs={false} sm={5} md={8}>
+            <Grid item xs={false} sm={5} md={8} style={{backgroundColor: "#c8f6fa"}}>
             </Grid>
             <Grid item xs={12} sm={8} md={4} component={Paper} elevation={6} square className={classes.box}>
                 {existing ? <SignIn classes={classes} setExistingHandler={setExistingHandler} /> : <SignUp classes={classes} setExistingHandler={setExistingHandler} />}

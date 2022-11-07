@@ -132,7 +132,8 @@ const NewIssue = () => {
                     razorpay_signature: response.razorpay_signature,
                 };
                 const result = await API.post("/payment/" + orderId, data);
-                if (result.status === 201) {
+                console.log(result.status)
+                if (result.status === 200) {
                     setSnackbarMessage("Payment Successful. Redirecting you to main screen...")
                     setTimeout(function () {
                         history.push(Paths.dashboard)

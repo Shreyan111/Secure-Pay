@@ -107,7 +107,7 @@ export default function Dashboard() {
                                         variant={'body2'}
                                         color={'textSecondary'}
                                         noWrap>
-                                        This month's payments
+                                        This month's payments which are about<br/>to be recieved through the orders<br/>by the customers.
                                     </Typography>
                                 </Stack>
                                 <Button
